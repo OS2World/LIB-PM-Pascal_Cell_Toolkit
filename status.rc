@@ -1,0 +1,67 @@
+/*
+** Module   :MULTIBAR.RC
+** Abstract :Resource definition for MULTIBAR.C
+**
+** Copyright (C) Sergey I. Yevtushenko
+** Log: Sun  08/02/98   Refined
+*/
+
+#include <os2.h>
+#include <multibar.h>
+
+BITMAP IDB_FILENEW  "F_NEW.BMP"
+BITMAP IDB_FILEOPEN "F_OPEN.BMP"
+BITMAP IDB_FILESAVE "F_SAVE.BMP"
+BITMAP IDB_FILSAVAS "F_SAVAS.BMP"
+BITMAP IDB_EXIT     "F_EXIT.BMP"
+BITMAP IDB_EDITCOPY "E_COPY.BMP"
+BITMAP IDB_EDITCUT  "E_CUT.BMP"
+BITMAP IDB_EDITFIND "E_FIND.BMP"
+BITMAP IDB_EDITFNNX "E_FINNXT.BMP"
+BITMAP IDB_EDITPAST "E_PASTE.BMP"
+BITMAP IDB_EDITREPL "E_REPL.BMP"
+BITMAP IDB_EDITUNDO "E_UNDO.BMP"
+BITMAP IDB_HELP     "H_HELP.BMP"
+BITMAP IDB_ABOUT    "H_INFO.BMP"
+
+MENU MAIN_FRAME
+{
+    SUBMENU "~File", ID_FILEMENU
+    {
+        MENUITEM "~New"            , IDB_FILENEW
+        MENUITEM "~Open..."        , IDB_FILEOPEN
+        MENUITEM SEPARATOR
+        MENUITEM "~Save..."        , IDB_FILESAVE
+        MENUITEM "Save ~As..."     , IDB_FILSAVAS
+        MENUITEM SEPARATOR
+        MENUITEM "~Exit...\tF3"    , IDB_EXIT
+	}
+
+    SUBMENU "~Edit", ID_EDITMENU
+    {
+        MENUITEM "~Undo\tAlt+Backspace", IDB_EDITUNDO
+        MENUITEM SEPARATOR
+        MENUITEM "Cu~t\tShift+Del"     , IDB_EDITCUT
+        MENUITEM "~Copy\tCtrl+Ins"     , IDB_EDITCOPY
+        MENUITEM "~Paste\tShift+Ins"   , IDB_EDITPAST
+    }
+}
+
+STRINGTABLE
+{
+    IDB_FILENEW , " Create new file "
+    IDB_FILEOPEN, " Open existing file "
+    IDB_FILESAVE, " Save file "
+    IDB_FILSAVAS, " Save file with new name "
+    IDB_EXIT    , " Exit app "
+    IDB_EDITCOPY, " Copy selection to clipboard "
+    IDB_EDITCUT , " Cut selection to clipboard  "
+    IDB_EDITFIND, " Search "
+    IDB_EDITFNNX, " Search again "
+    IDB_EDITPAST, " Paste from clipboard "
+    IDB_EDITREPL, " Replace "
+    IDB_EDITUNDO, " Undo action "
+    IDB_HELP    , " Call on-line help "
+    IDB_ABOUT   , " About this app "
+}
+
